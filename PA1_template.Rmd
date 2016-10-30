@@ -2,7 +2,9 @@
 title: "Project1"
 author: "Beverly Andrews"
 date: "October 28, 2016"
-output: html_document
+output: 
+  html_document: 
+    keep_md: true
 ---
 The librarys used for this solution are dplyr, gridExtra, ggplot and data.table
 ```{r}
