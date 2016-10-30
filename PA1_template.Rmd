@@ -85,7 +85,7 @@ steps_by_day_imputed<-aggregate(d3$steps, by=list(day=d3$date), FUN=sum, na.rm=T
 A vector of the weekdays are created and the new dataset is stored in q8. The day_type column is char so it is converted to factor.
 ```{r echo = TRUE}
 weekdays1<- c("Monday","Tuesday","Wednesday","Thursday","Friday")
-q8<-mutate(d2, day_type = c('weekend', 'weekday')[(weekdays(q2a$day) %in% weekdays1)+1L] )
+q8<-mutate(d2, day_type = c('weekend', 'weekday')[(weekdays(d2$date) %in% weekdays1)+1L] )
 q8$day_type<-as.factor(q8$day_type)
 
 weekend_plot<-ggplot(subset(q8, day_type == 'weekend'), aes(interval, steps)) + geom_line()+xlab("Interval")+ylab('steps')+ggtitle("Weekend")
@@ -93,6 +93,5 @@ weekday_plot<-ggplot(subset(q8, day_type == 'weekday'), aes(interval, steps)) + 
 grid.arrange(weekday_plot, weekend_plot,nrow=2, ncol= 1)
 ```
 
-**9. All of the R code needed to reproduce the results (numbers, plots, etc.) in the report**
 
 
