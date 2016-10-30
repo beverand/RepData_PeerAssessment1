@@ -95,4 +95,3 @@ grid.arrange(weekday_plot, weekend_plot,nrow=2, ncol= 1)
 
 **9. All of the R code needed to reproduce the results (numbers, plots, etc.) in the report**
 
-
